@@ -32,3 +32,4 @@ function db_WpCrud(){
 register_activation_hook( __FILE__, 'db_WpCrud' );
 
 include(WPC_RUTA.'include/menu_option.php');
+include('functions.php');
