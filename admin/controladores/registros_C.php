@@ -14,4 +14,23 @@ class RegistrosC{
 
         }
     }
+
+    public function MostrarRegistroC(){
+        $respuesta = RegistrosM::MostrarRegistroM();
+
+        foreach($respuesta as $key => $value){
+            echo'<div class="TableItem">
+                    <article class="TableItemRegister">'.$value["nombre"].'</article>
+                    <article class="TableItemRegister">'.$value["fecha"].'</article>
+                    <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=registros&id='.$value["ID"].'">Editar</a></article>
+                    <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=registros&idB='.$value["ID"].'">Eliminar</a></article>
+                </div>';
+        }
+    }
+
+    public function EliminarRegistroC(){
+        if(isset($_GET["idB"])){
+            echo "Hola";
+        }
+    }
 }
