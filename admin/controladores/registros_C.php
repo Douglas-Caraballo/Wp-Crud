@@ -30,7 +30,18 @@ class RegistrosC{
 
     public function EliminarRegistroC(){
         if(isset($_GET["idB"])){
-            echo "Hola";
+            $datosC=$_GET["idB"];
+
+            $respuesta= RegistrosM::EliminarRegistroM($datosC);
+
+            if($respuesta=="Bien"){?>
+                <script>
+                    location.replace(window.location.pathname + '?page=registros');
+                </script>
+            <?php
+            }else{
+                echo "Error al eliminar";
+            }
         }
     }
 }

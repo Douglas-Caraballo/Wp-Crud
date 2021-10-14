@@ -25,4 +25,15 @@ class RegistrosM{
         );
         return $allRegister;
     }
+
+    static public function EliminarRegistroM($datosC){
+        global $wpdb;
+        $nombreTabla = $wpdb->prefix."registers";
+        $wpdb -> query("DELETE FROM $nombreTabla WHERE ID=$datosC");
+        if($wpdb->show_errors){
+            return "Error";
+        }else{
+            return "Bien";
+        }
+    }
 }

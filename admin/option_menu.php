@@ -37,6 +37,7 @@ function SubMenuRegistro(){
 }
 
 function SubMenuTodos(){
+    ob_start();
 ?>
     <div>
         <h2><?php _e('Todos los Registros', 'todos los registros') ?></h2>
@@ -58,6 +59,7 @@ function SubMenuTodos(){
         ?>
     </div>
 <?php
+ob_end_flush();
 }
 
 function SubmenuReporte(){
