@@ -22,9 +22,38 @@ class RegistrosC{
             echo'<div class="TableItem">
                     <article class="TableItemRegister">'.$value["nombre"].'</article>
                     <article class="TableItemRegister">'.$value["fecha"].'</article>
-                    <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=registros&id='.$value["ID"].'">Editar</a></article>
+                    <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=editar&id='.$value["ID"].'">Editar</a></article>
                     <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=registros&idB='.$value["ID"].'">Eliminar</a></article>
                 </div>';
+        }
+    }
+
+    public function EditarRegistroC(){
+        $datosC = $_GET["id"];
+
+        $respuesta = RegistrosM::EditarRegistroM($datosC);
+        foreach($respuesta as $key => $value){
+            echo   '<input type="hidden" value="'.$value["ID"].'"name="idE"">
+                    <label>Nombre</label>
+                    <input type="text" value="'.$value["nombre"].'"name="nombreE">
+                    <input class="submint" type="submit" value="Actualizar">
+                    ';
+        }
+    }
+
+    public function ActualizarRegistroC(){
+        if (isset($_POST["nombreE"])){
+            $datosC= array("id"=>$_POST["idE"], "nombre"=>$_POST["nombreE"]);
+
+            $respuesta = RegistrosM::ActualizarRegistroM($datosC);
+            if($respuesta=="Bien"){?>
+                <script>
+                    location.replace(window.location.pathname + '?page=registros');
+                </script>
+            <?php
+            }else{
+                echo "Ocurrió un error al actualizar";
+            }
         }
     }
 
