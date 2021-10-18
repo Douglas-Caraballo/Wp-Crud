@@ -1,6 +1,8 @@
 <?php
 include (WPC_RUTA. 'admin/controladores/registros_C.php');
+include (WPC_RUTA. 'admin/controladores/reportes_C.php');
 include (WPC_RUTA. 'admin/modelos/registros_M.php');
+include (WPC_RUTA. 'admin/modelos/reportes_M.php');
 function MenuInicio(){
 ?>
     <div>
@@ -9,7 +11,6 @@ function MenuInicio(){
     </div>
 <?php
 }
-
 function SubMenuRegistro(){
 ?>
     <div>
@@ -29,13 +30,12 @@ function SubMenuRegistro(){
                 </form>
             </div>
             <div>
-                Aca va una imagen
+                <p> Aca va una imagen</p>
             </div>
         </div>
     </div>
 <?php
 }
-
 function SubMenuTodos(){
 ?>
     <div>
@@ -67,7 +67,6 @@ function EditarRegistro(){
             <?php
                 $editar = new RegistrosC();
                 $editar -> EditarRegistroC();
-
                 $actializar = new RegistrosC();
                 $actializar -> ActualizarRegistroC();
             ?>
@@ -82,8 +81,13 @@ function SubmenuReporte(){
         <div class="Wrapper">
             <form class="WrapperForm" method="post">
                 <input class="submint" type="submit" value="Generar">
+                <?php
+                    $reportes = new ReportesC();
+                    $reportes -> RealizarReportesC();
+                ?>
             </form>
         </div>
     </div>
 <?php
 }
+?>
