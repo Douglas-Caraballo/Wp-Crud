@@ -79,15 +79,13 @@ function SubmenuReporte(){
     <div>
         <h2><?php _e('Generar Reportes', 'generar reporte') ?></h2>
         <div class="Wrapper">
-            <form class="WrapperForm" method="post">
-                <input class="submint" type="submit" value="Generar">
-                <?php
-                    $reportes = new ReportesC();
-                    $reportes -> RealizarReportesC();
-                ?>
-            </form>
+            <a class="submint Button" href="<?= admin_url().'admin.php?page=reportes_general'?>">Generar</a>
         </div>
     </div>
 <?php
+}
+function SubmenuReporteGeneral(){
+    $reporte = new ReportesC();
+    $reporte -> RealizarReportesC();
 }
 ?>
