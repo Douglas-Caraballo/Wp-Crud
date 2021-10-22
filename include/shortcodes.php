@@ -1,8 +1,9 @@
 <?php
+include_once(WPC_RUTA. 'public/controladores/registros_shortcode_C.php');
 
 function VerRegistrosShortCode(){
-    $mostrarRegistros = new RegistrosC();
-    $mostrarRegistros -> MostrarRegistroC();
+    $mostrarRegistros = new RegistrosShortcodeC();
+    $mostrarRegistros -> MostrarRegistroShortcodeC();
 
 }
 
