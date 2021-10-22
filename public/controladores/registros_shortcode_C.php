@@ -6,9 +6,9 @@ class RegistrosShortcodeC{
         $respuesta = RegistrosM::MostrarRegistroM();
 
         foreach($respuesta as $key => $value){
-            echo'<div class="TableItem">
-                    <article class="TableItemRegister">'.$value["nombre"].'</article>
-                    <article class="TableItemRegister">'.$value["fecha"].'</article>
+            echo'<div class="TableItemPage">
+                    <article class="TableItemPageRegister">'.$value["nombre"].'</article>
+                    <article class="TableItemPageRegister">'.$value["fecha"].'</article>
                 </div>';
         }
     }

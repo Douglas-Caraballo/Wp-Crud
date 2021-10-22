@@ -22,7 +22,7 @@ function SubMenuRegistro(){
                     <input type="text" name="NombreR">
                     <label>Fecha</label>
                     <input type="date" name="FechaR">
-                    <input class="submint" type="submit" value="Enviar">
+                    <input class="submit" type="submit" value="Enviar">
                     <?php
                         $registrar = new RegistrosC();
                         $registrar -> RealizarRegistroC();
@@ -79,7 +79,7 @@ function SubmenuReporte(){
     <div>
         <h2><?php _e('Generar Reportes', 'generar reporte') ?></h2>
         <div class="Wrapper">
-            <a class="submint Button" href="<?= admin_url().'admin.php?page=reportes_general'?>">Generar</a>
+            <a class="submit Button" href="<?= admin_url().'admin.php?page=reportes_general'?>">Generar</a>
         </div>
     </div>
 <?php

@@ -8,14 +8,14 @@ function VerRegistrosShortCode(){
 }
 
 function ReistrarShortCode(){ ?>
-            <div class="Wrapper">
+            <div class="WrapperPage">
             <div>
-                <form class="WrapperForm" method="post">
+                <form class="WrapperPageForm" method="post">
                     <label>Nombre</label>
                     <input type="text" name="NombreR">
                     <label>Fecha</label>
                     <input type="date" name="FechaR">
-                    <input class="submint" type="submit" value="Enviar">
+                    <input class="submit" type="submit" value="Enviar">
                     <?php
                         $registrar = new RegistrosC();
                         $registrar -> RealizarRegistroC();
