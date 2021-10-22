@@ -3,7 +3,7 @@
 Plugin Name: wp-Crud
 Plugin URI:
 Description: Plugin para crear un crud en wordpress y generar pdf
-Version: 1.0
+Version: 1.5
 Author: Douglas Caraballo
 Author URI:
 License:
@@ -30,6 +30,9 @@ function db_WpCrud(){
 }
 
 register_activation_hook( __FILE__, 'db_WpCrud' );
+register_activation_hook( __FILE__, 'PaginasCrud' );
 
-include(WPC_RUTA.'include/menu_option.php');
-include('functions.php');
+require(WPC_RUTA.'include/news_pages.php');
+require(WPC_RUTA.'include/menu_option.php');
+require('functions.php');
+require(WPC_RUTA. 'include/shortcodes.php');
