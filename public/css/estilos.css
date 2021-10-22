@@ -8,3 +8,15 @@
     gap:1rem;
     font-size: 1rem;
 }
+.TableItemPage{
+    display: flex;
+    padding: 0.5rem;
+    gap: 1rem;
+    border-bottom: 1px solid black;
+}
+.TableItemPageRegister{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    font-size: 1rem;
+}
