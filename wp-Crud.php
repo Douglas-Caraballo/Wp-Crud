@@ -36,3 +36,7 @@ require(WPC_RUTA.'include/news_pages.php');
 require(WPC_RUTA.'include/menu_option.php');
 require('functions.php');
 require(WPC_RUTA. 'include/shortcodes.php');
+
+
+
+register_deactivation_hook( __FILE__, 'EliminarPaginas' );
