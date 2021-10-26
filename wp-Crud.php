@@ -29,8 +29,12 @@ function db_WpCrud(){
     dbDelta($created);
 }
 
+//Activación del plugin
+
 register_activation_hook( __FILE__, 'db_WpCrud' );
 register_activation_hook( __FILE__, 'PaginasCrud' );
+
+//Funciones del plugin
 
 require(WPC_RUTA.'include/news_pages.php');
 require(WPC_RUTA.'include/menu_option.php');
@@ -38,5 +42,5 @@ require('functions.php');
 require(WPC_RUTA. 'include/shortcodes.php');
 
 
-
+//Desactivación del plugin
 register_deactivation_hook( __FILE__, 'EliminarPaginas' );
