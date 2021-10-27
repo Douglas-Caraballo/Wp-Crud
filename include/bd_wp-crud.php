@@ -1,5 +1,6 @@
 <?php
 
+require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 function db_WpCrud(){
     global $wpdb;
     $nombreTabla = $wpdb->prefix."registers";
@@ -9,11 +10,9 @@ function db_WpCrud(){
             nombre TEXT NOT NULL,
             fecha TEXT NOT NULL,
             id_user BIGINT(20) unsigned NOT NULL,
-            PRIMARY KEY (ID),
+            PRIMARY KEY (ID)
             FOREIGN KEY (id_user) REFERENCES wptc_users(ID)
-            ON UPDATE CASCADE ON DELETE CASCADE)$charset_collate;"
-    ;
-    require_once( ABSPATH . 'wp-admin/includes/upgrade.php');
+            ON UPDATE CASCADE ON DELETE CASCADE)$charset_collate;";
     dbDelta($created);
 }
 
