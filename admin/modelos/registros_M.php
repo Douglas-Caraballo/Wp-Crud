@@ -7,8 +7,9 @@ class RegistrosM{
         $nombreTabla = $wpdb->prefix."registers";
         $wpdb -> insert($nombreTabla, array(
                 'nombre'=>$datosC['nombre'],
-                'fecha'=>$datosC['fecha']
-                ),array('%s','%s')
+                'fecha'=>$datosC['fecha'],
+                'id_user'=>$datosC['id_user']
+                ),array('%s','%s','%s')
         );
         if($wpdb->show_errors){
             return "Error";

@@ -3,8 +3,9 @@
 class RegistrosC{
 
     public function RealizarRegistroC(){
+        $idUsuarios = get_current_user_id();
         if (isset($_POST["NombreR"])){
-            $datosC = array("nombre"=>$_POST["NombreR"], "fecha"=>$_POST["FechaR"]);
+            $datosC = array("nombre"=>$_POST["NombreR"], "fecha"=>$_POST["FechaR"], "id_user"=>$idUsuarios);
             $respuesta = RegistrosM::RealizarRegistroM($datosC);
             if($respuesta=="Bien"){
                 echo "Registrado con exito";
