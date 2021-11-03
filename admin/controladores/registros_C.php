@@ -74,4 +74,16 @@ class RegistrosC{
             }
         }
     }
+
+    public function AgregarCategoriasC(){
+        if(isset($_POST["NombreCR"])){
+            $datosC=array("nombre"=>$_POST["NombreCR"]);
+            $respuesta = RegistrosM::AgregarCategoriasM($datosC);
+            if($respuesta=="Bien"){
+                echo "Registrado con exito";
+            }else{
+                echo "Ocurrió un error al registrar";
+            }
+        }
+    }
 }

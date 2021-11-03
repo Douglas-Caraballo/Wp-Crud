@@ -60,4 +60,18 @@ class RegistrosM{
             return "Bien";
         }
     }
+
+    static public function AgregarCategoriasM($datosC){
+        global $wpdb;
+        $nombreTabla = $wpdb->prefix."categories_registers";
+        $wpdb ->insert($nombreTabla, array(
+                        'nombre'=>$datosC["nombre"]
+                        ),array('%s')
+                    );
+        if($wpdb->show_errors){
+            return "Error";
+        }else{
+            return "Bien";
+        }
+    }
 }

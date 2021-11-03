@@ -36,6 +36,23 @@ function SubMenuRegistro(){
     </div>
 <?php
 }
+function SubMenuCategorias(){?>
+    <h2><?php _e('Registrar Categorias','Registrar una categoria') ?></h2>
+    <div class="Wrapper">
+        <div>
+            <form class="WrapperForm" method="post">
+                <label>Nombre de la categoria</label>
+                <input type="text" name="NombreCR">
+                <input class="submit" type="submit" value="Enviar">
+                <?php
+                    $registrarCategorias = new RegistrosC();
+                    $registrarCategorias -> AgregarCategoriasC()
+                ?>
+            </form>
+        </div>
+    </div>
+<?php
+}
 function SubMenuTodos(){
 ?>
     <div>
