@@ -9,6 +9,7 @@ class RegistrosShortcodeC{
             echo'<div class="TableItemPage">
                     <article class="TableItemPageRegister">'.$value["nombre"].'</article>
                     <article class="TableItemPageRegister">'.$value["fecha"].'</article>
+                    <article class="TableItemPageRegister">'.$value["nombre_c"].'</article>
                 </div>';
         }
     }

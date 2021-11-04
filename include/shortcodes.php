@@ -1,10 +1,19 @@
 <?php
 include_once(WPC_RUTA. 'public/controladores/registros_shortcode_C.php');
 
-function VerRegistrosShortCode(){
-    $mostrarRegistros = new RegistrosShortcodeC();
-    $mostrarRegistros -> MostrarRegistroShortcodeC();
-
+function VerRegistrosShortCode(){ ?>
+    <div class="Table">
+        <div class="TableItemPage">
+            <article class="TableItemPageRegister">Nombre</article>
+            <article class="TableItemPageRegister">Fecha</article>
+            <article class="TableItemPageRegister">Categoria</article>
+        </div>
+        <?php
+            $mostrarRegistros = new RegistrosShortcodeC();
+            $mostrarRegistros -> MostrarRegistroShortcodeC();
+        ?>
+    </div>
+<?php
 }
 
 function ReistrarShortCode(){ ?>
