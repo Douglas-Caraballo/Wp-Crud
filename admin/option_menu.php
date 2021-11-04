@@ -22,6 +22,13 @@ function SubMenuRegistro(){
                     <input type="text" name="NombreR">
                     <label>Fecha</label>
                     <input type="date" name="FechaR">
+                    <label>Categoria</label>
+                    <select name="CategoriasR">
+                        <?php
+                            $categorrias = new RegistrosC();
+                            $categorrias -> SelectCategoriasC();
+                        ?>
+                    </select>
                     <input class="submit" type="submit" value="Enviar">
                     <?php
                         $registrar = new RegistrosC();

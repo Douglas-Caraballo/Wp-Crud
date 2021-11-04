@@ -31,9 +31,9 @@ class ReportesC{
         $pdf -> AddPage();
         $pdf -> SetFont('Arial', '', 12);
         foreach($respuesta as $key => $row){
-            $pdf -> Cell(50,10,$row['nombre'],1,0,'C',0);
+            $pdf -> Cell(50,10,utf8_decode($row['nombre']),1,0,'C',0);
             $pdf -> Cell(30,10,$row['fecha'],1,0,'C',0);
-            $pdf -> Cell(30,10,$row['user_nicename'],1,1,'C',0);
+            $pdf -> Cell(30,10,utf8_decode($row['user_nicename']),1,1,'C',0);
         }
         $pdf-> Output();
         ob_end_flush();

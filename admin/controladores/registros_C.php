@@ -5,7 +5,7 @@ class RegistrosC{
     public function RealizarRegistroC(){
         $idUsuarios = get_current_user_id();
         if (isset($_POST["NombreR"])){
-            $datosC = array("nombre"=>$_POST["NombreR"], "fecha"=>$_POST["FechaR"], "id_user"=>$idUsuarios);
+            $datosC = array("nombre"=>$_POST["NombreR"], "fecha"=>$_POST["FechaR"], "id_user"=>$idUsuarios, "categoria"=>$_POST["CategoriasR"]);
             $respuesta = RegistrosM::RealizarRegistroM($datosC);
             if($respuesta=="Bien"){
                 echo "Registrado con exito";
@@ -84,6 +84,13 @@ class RegistrosC{
             }else{
                 echo "Ocurrió un error al registrar";
             }
+        }
+    }
+
+    public function SelectCategoriasC(){
+        $respuesta= RegistrosM::SelectCategoriasM();
+        foreach($respuesta as $key => $value){
+            echo '<option value="'.$value["ID"].'">'. $value["nombre"] .'</option>';
         }
     }
 }

@@ -8,8 +8,9 @@ class RegistrosM{
         $wpdb -> insert($nombreTabla, array(
                 'nombre'=>$datosC['nombre'],
                 'fecha'=>$datosC['fecha'],
-                'id_user'=>$datosC['id_user']
-                ),array('%s','%s','%s')
+                'id_user'=>$datosC['id_user'],
+                'id_categoria_registro'=>$datosC['categoria']
+                ),array('%s','%s','%s','%s')
         );
         if($wpdb->show_errors){
             return "Error";
@@ -73,5 +74,14 @@ class RegistrosM{
         }else{
             return "Bien";
         }
+    }
+
+    static public function SelectCategoriasM(){
+        global $wpdb;
+        $nombreTabla = $wpdb->prefix."categories_registers";
+        $allRegister = $wpdb->get_results(
+            "SELECT ID, nombre FROM $nombreTabla;", ARRAY_A
+        );
+        return $allRegister;
     }
 }
