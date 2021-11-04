@@ -18,18 +18,19 @@ function db_WpCrud(){
 
     $categorias="CREATE TABLE $nombreTablaSecond(
         ID BIGINT(20) unsigned NOT NULL AUTO_INCREMENT,
-        nombre TEXT NOT NULL,
+        nombre_c TEXT NOT NULL,
         PRIMARY KEY (ID))$charset_collate;";
     $wpdb -> query($categorias);
 }
 
-/*function EliminarBD(){
+function EliminarBD(){
     global $wpdb;
     $nombreTabla = $wpdb->prefix."registers";
     $nombreTablaSecond= $wpdb->prefix."categories_registers";
+
     $sqlRegister="DROP TABLE IF EXISTS $nombreTabla";
-    $wpdb -> query($sqlregister);
+    $wpdb -> query($sqlRegister);
 
     $sqlCategoriesRegister = "DROP TABLE IF EXISTS $nombreTablaSecond";
     $wpdb -> query($sqlCategoriesRegister);
-}*/
+}

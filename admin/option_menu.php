@@ -68,6 +68,7 @@ function SubMenuTodos(){
             <div class="TableItem">
                 <article class="TableItemRegister">Nombre</article>
                 <article class="TableItemRegister">Fecha</article>
+                <article class="TableItemRegister">Categoria</article>
                 <article class="TableItemRegister"></article>
                 <article class="TableItemRegister"></article>
             </div>

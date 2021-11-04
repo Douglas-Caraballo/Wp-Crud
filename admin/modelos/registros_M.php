@@ -22,8 +22,10 @@ class RegistrosM{
     static public function MostrarRegistroM(){
         global $wpdb;
         $nombreTabla = $wpdb->prefix."registers";
+        $nombreTablaSecond= $wpdb->prefix."categories_registers";
         $allRegister = $wpdb->get_results(
-            "SELECT ID, nombre, fecha FROM $nombreTabla;", ARRAY_A
+            "SELECT R.ID, R.nombre, R.fecha, C.nombre_c FROM $nombreTabla AS R INNER JOIN 
+            $nombreTablaSecond AS C ON R.id_categoria_registro=C.ID;", ARRAY_A
         );
         return $allRegister;
     }
@@ -66,7 +68,7 @@ class RegistrosM{
         global $wpdb;
         $nombreTabla = $wpdb->prefix."categories_registers";
         $wpdb ->insert($nombreTabla, array(
-                        'nombre'=>$datosC["nombre"]
+                        'nombre_c'=>$datosC["nombre"]
                         ),array('%s')
                     );
         if($wpdb->show_errors){
@@ -80,7 +82,7 @@ class RegistrosM{
         global $wpdb;
         $nombreTabla = $wpdb->prefix."categories_registers";
         $allRegister = $wpdb->get_results(
-            "SELECT ID, nombre FROM $nombreTabla;", ARRAY_A
+            "SELECT ID, nombre_c FROM $nombreTabla;", ARRAY_A
         );
         return $allRegister;
     }

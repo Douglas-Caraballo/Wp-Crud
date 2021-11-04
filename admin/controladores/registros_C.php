@@ -23,6 +23,7 @@ class RegistrosC{
             echo'<div class="TableItem">
                     <article class="TableItemRegister">'.$value["nombre"].'</article>
                     <article class="TableItemRegister">'.$value["fecha"].'</article>
+                    <article class="TableItemRegister">'.$value["nombre_c"].'</article>
                     <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=editar&id='.$value["ID"].'">Editar</a></article>
                     <article class="TableItemRegister"><a href="'.admin_url().'admin.php?page=registros&idB='.$value["ID"].'">Eliminar</a></article>
                 </div>';
