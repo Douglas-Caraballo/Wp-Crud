@@ -16,22 +16,37 @@ function VerRegistrosShortCode(){ ?>
 <?php
 }
 
-function ReistrarShortCode(){ ?>
-            <div class="WrapperPage">
-            <div>
-                <form class="WrapperPageForm" method="post">
-                    <label>Nombre</label>
-                    <input type="text" name="NombreR">
-                    <label>Fecha</label>
-                    <input type="date" name="FechaR">
-                    <input class="submit" type="submit" value="Enviar">
+function ReistrarShortCode(){
+    if (is_user_logged_in()){ ?>
+    <div class="WrapperPage">
+        <div>
+            <form class="WrapperPageForm" method="post">
+                <label>Nombre</label>
+                <input type="text" name="NombreR">
+                <label>Fecha</label>
+                <input type="date" name="FechaR">
+                <label>Categoria</label>
+                <select name="CategoriasR">
                     <?php
-                        $registrar = new RegistrosC();
-                        $registrar -> RealizarRegistroC();
+                        $categorrias = new RegistrosC();
+                        $categorrias -> SelectCategoriasC();
                     ?>
-                </form>
-            </div>
+                </select>
+                <input class="submit" type="submit" value="Enviar">
+                <?php
+                    $registrar = new RegistrosC();
+                    $registrar -> RealizarRegistroC();
+                ?>
+            </form>
+        </div>
+    </div>
 <?php
+    }else{ ?>
+        <div>
+            <p>No puede registrar mientras no se encuentre logeado</p>
+        </div>
+    <?php
+    }
 }
 
 add_shortcode( 'wpc_mostrar_registros', 'VerRegistrosShortCode');

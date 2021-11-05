@@ -91,7 +91,7 @@ class RegistrosC{
     public function SelectCategoriasC(){
         $respuesta= RegistrosM::SelectCategoriasM();
         foreach($respuesta as $key => $value){
-            echo '<option value="'.$value["ID"].'">'. $value["nombre"] .'</option>';
+            echo '<option value="'.$value["ID"].'">'. $value["nombre_c"] .'</option>';
         }
     }
 }
