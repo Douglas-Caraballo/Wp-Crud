@@ -11,7 +11,9 @@ class PDF extends FPDF{
         $this -> Ln(30);
         //Cabecera de la tabla
         $this -> Cell(50,10, 'Nombre',1,0,'C',0);
-        $this -> Cell(30,10,'Fecha',1,1,'C',0);
+        $this -> Cell(30,10,'Fecha',1,0,'C',0);
+        $this -> Cell(30,10,'Categoria',1,0,'C',0);
+        $this -> Cell(30,10,'Usuario',1,1,'C',0);
     }
 
     function Footer(){
@@ -33,6 +35,7 @@ class ReportesC{
         foreach($respuesta as $key => $row){
             $pdf -> Cell(50,10,utf8_decode($row['nombre']),1,0,'C',0);
             $pdf -> Cell(30,10,$row['fecha'],1,0,'C',0);
+            $pdf -> Cell(30,10, utf8_decode($row['nombre_c']),1,0,'C',0);
             $pdf -> Cell(30,10,utf8_decode($row['user_nicename']),1,1,'C',0);
         }
         $pdf-> Output();
