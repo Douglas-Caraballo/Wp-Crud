@@ -4,6 +4,8 @@ a{
 .Wrapper{
     display: flex;
     padding: 1rem;
+    gap: 2rem;
+    flex-direction: column;
 }
 .WrapperForm{
     display: flex;
@@ -39,4 +41,23 @@ a{
 .Button{
     padding: 1rem;
     font-size: 1rem;
+}
+.TableCategory{
+    display: flex;
+    gap:1rem;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid black;
+}
+
+.CategoryItem{
+    width: 50%;
+}
+
+@media only screen and (min-width: 1020px){
+    .Wrapper{
+        flex-direction: row;
+    }
+    .CategoryList{
+        width: 50%;
+    }
 }

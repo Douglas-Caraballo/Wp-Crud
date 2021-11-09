@@ -1,8 +1,10 @@
 <?php
 include (WPC_RUTA. 'admin/controladores/registros_C.php');
 include (WPC_RUTA. 'admin/controladores/reportes_C.php');
+include (WPC_RUTA. 'admin/controladores/categorias_C.php');
 include (WPC_RUTA. 'admin/modelos/registros_M.php');
 include (WPC_RUTA. 'admin/modelos/reportes_M.php');
+include (WPC_RUTA. 'admin/modelos/categorias_M.php');
 function MenuInicio(){
 ?>
     <div>
@@ -25,8 +27,8 @@ function SubMenuRegistro(){
                     <label>Categoria</label>
                     <select name="CategoriasR">
                         <?php
-                            $categorrias = new RegistrosC();
-                            $categorrias -> SelectCategoriasC();
+                            $categorias = new RegistrosC();
+                            $categorias -> SelectCategoriasC();
                         ?>
                     </select>
                     <input class="submit" type="submit" value="Enviar">
@@ -56,6 +58,16 @@ function SubMenuCategorias(){?>
                     $registrarCategorias -> AgregarCategoriasC()
                 ?>
             </form>
+        </div>
+        <div class="CategoryList">
+            <h3>Todas las categorias</h3>
+            <?php
+                $mostrarCategorias = new CategoriasC();
+                $mostrarCategorias -> MostrarCategoriasC();
+
+                $eliminarCategorias = new CategoriasC();
+                $eliminarCategorias -> EliminarCategoriasC();
+            ?>
         </div>
     </div>
 <?php
