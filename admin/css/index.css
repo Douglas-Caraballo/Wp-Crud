@@ -48,11 +48,9 @@ a{
     padding: 1rem 1rem;
     border-bottom: 1px solid black;
 }
-
 .CategoryItem{
     width: 50%;
 }
-
 @media only screen and (min-width: 1020px){
     .Wrapper{
         flex-direction: row;
