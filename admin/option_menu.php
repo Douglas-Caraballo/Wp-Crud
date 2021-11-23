@@ -31,7 +31,7 @@ function SubMenuRegistro(){
                             $categorias -> SelectCategoriasC();
                         ?>
                     </select>
-                    <input class="submit" type="submit" value="Enviar">
+                    <input class="Wp-CrudSubmit" type="submit" value="Enviar">
                     <?php
                         $registrar = new RegistrosC();
                         $registrar -> RealizarRegistroC();
@@ -52,7 +52,7 @@ function SubMenuCategorias(){?>
             <form class="WrapperForm" method="post">
                 <label>Nombre de la categoria</label>
                 <input type="text" name="NombreCR">
-                <input class="submit" type="submit" value="Enviar">
+                <input class="Wp-CrudSubmit" type="submit" value="Enviar">
                 <?php
                     $registrarCategorias = new RegistrosC();
                     $registrarCategorias -> AgregarCategoriasC()
@@ -116,7 +116,7 @@ function SubmenuReporte(){
     <div>
         <h2><?php _e('Generar Reportes', 'generar reporte') ?></h2>
         <div class="Wrapper">
-            <a class="submit Button" href="<?= admin_url().'admin.php?page=reportes_general'?>">Generar</a>
+            <a class="Wp-CrudSubmit Button" href="<?= admin_url().'admin.php?page=reportes_general'?>">Generar</a>
         </div>
     </div>
 <?php
