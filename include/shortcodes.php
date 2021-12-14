@@ -17,7 +17,10 @@ function VerRegistrosShortCode(){
 <?php
     }else{?>
         <div class="WrapperPage">
-            <p>No puede ver los registros si no se encuetra logueado</p>
+            <p class="NoRegister">No puede ver los registros si no se encuetra logueado</p>
+            <figure class="ContainerRegisterPageImg">
+                <img class="RegisterPageImg" src="<?= WPC_RUTA_PUBLIC.'public/img/noregister.svg';?>" alt="">
+            </figure>
         </div>
 <?php
     }
@@ -26,31 +29,37 @@ function VerRegistrosShortCode(){
 function ReistrarShortCode(){
     if (is_user_logged_in()){ ?>
     <div class="WrapperPage">
-        <div>
+        <div class="ContainerForm">
             <form class="WrapperPageForm" method="post">
                 <label>Nombre</label>
-                <input type="text" name="NombreR">
+                <input class="PageFormInput" type="text" name="NombreR" required>
                 <label>Fecha</label>
-                <input type="date" name="FechaR">
+                <input class="PageFormInput" type="date" name="FechaR" required>
                 <label>Categoria</label>
-                <select name="CategoriasR">
+                <select class="PageFormInput" name="CategoriasR" required>
                     <?php
                         $categorrias = new RegistrosC();
                         $categorrias -> SelectCategoriasC();
                     ?>
                 </select>
-                <input class="submit" type="submit" value="Enviar">
+                <input class="SubmitPageRegistrer" type="submit" value="Enviar">
                 <?php
                     $registrar = new RegistrosC();
                     $registrar -> RealizarRegistroC();
                 ?>
             </form>
         </div>
+        <figure class="ContainerRegisterPageImg">
+            <img class="RegisterPageImg" src="<?= WPC_RUTA_PUBLIC.'public/img/forms.svg';?>" alt="">
+        </figure>
     </div>
 <?php
     }else{ ?>
         <div class="WrapperPage">
-            <p>No puede registrar mientras no se encuentre logeado</p>
+            <p class="NoRegister">No puede registrar mientras no se encuentre logeado</p>
+            <figure class="ContainerRegisterPageImg">
+                <img class="RegisterPageImg" src="<?= WPC_RUTA_PUBLIC.'public/img/noregister.svg';?>" alt="">
+            </figure>
         </div>
     <?php
     }

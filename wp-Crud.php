@@ -12,6 +12,7 @@ License:
 defined('ABSPATH') or die("Bye bye");
 
 define('WPC_RUTA',plugin_dir_path(__FILE__));
+define('WPC_RUTA_PUBLIC',plugin_dir_url(__FILE__));
 
 //Activación del plugin
 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );

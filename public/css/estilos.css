@@ -1,12 +1,39 @@
 .WrapperPage{
     display: flex;
     padding: 1rem;
+    gap: 1rem;
+    align-items: center;
 }
 .WrapperPageForm{
     display: flex;
     flex-direction: column;
     gap:1rem;
     font-size: 1rem;
+}
+.PageFormInput{
+    padding: 0.5rem;
+    font-size:1rem;
+}
+.SubmitPageRegistrer{
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #262626;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.SubmitPageRegistrer:hover{
+    opacity: 0.8;
+}
+.ContainerRegisterPageImg{
+    width: 50%;
+}
+.ContainerForm{
+    width: 50%;
+}
+.RegisterPageImg{
+    width: 100%;
 }
 .Table{
     padding: 2rem;
@@ -29,4 +56,12 @@
     background-color: #262626;
     padding: 0.5rem;
     border-radius: 0.5rem;
+}
+.NoRegister{
+    width: 50%;
+    font-weight: bold;
+    text-align: center;
+}
+.entry-header{
+    padding: 1rem;
 }
