@@ -21,11 +21,11 @@ function SubMenuRegistro(){
             <div>
                 <form class="WrapperForm" method="post">
                     <label>Nombre</label>
-                    <input type="text" name="NombreR">
+                    <input type="text" name="NombreR" required>
                     <label>Fecha</label>
-                    <input type="date" name="FechaR">
+                    <input type="date" name="FechaR" required>
                     <label>Categoria</label>
-                    <select name="CategoriasR">
+                    <select name="CategoriasR" required>
                         <?php
                             $categorias = new RegistrosC();
                             $categorias -> SelectCategoriasC();
@@ -51,7 +51,7 @@ function SubMenuCategorias(){?>
         <div>
             <form class="WrapperForm" method="post">
                 <label>Nombre de la categoria</label>
-                <input type="text" name="NombreCR">
+                <input type="text" name="NombreCR" required>
                 <input class="Wp-CrudSubmit" type="submit" value="Enviar">
                 <?php
                     $registrarCategorias = new RegistrosC();
