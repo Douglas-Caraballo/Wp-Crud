@@ -1,19 +1,26 @@
 <?php
 include_once(WPC_RUTA. 'public/controladores/registros_shortcode_C.php');
 
-function VerRegistrosShortCode(){ ?>
-    <div class="Table">
-        <div class="TableItemPage">
-            <article class="TableItemPageRegister">Nombre</article>
-            <article class="TableItemPageRegister">Fecha</article>
-            <article class="TableItemPageRegister">Categoria</article>
+function VerRegistrosShortCode(){
+    if(is_user_logged_in()){?>
+        <div class="Table">
+            <div class="TableItemPage">
+                <article class="TableItemPageRegister TableHeader">Nombre</article>
+                <article class="TableItemPageRegister TableHeader">Fecha</article>
+                <article class="TableItemPageRegister TableHeader">Categoria</article>
+            </div>
+            <?php
+                $mostrarRegistros = new RegistrosShortcodeC();
+                $mostrarRegistros -> MostrarRegistroShortcodeC();
+            ?>
         </div>
-        <?php
-            $mostrarRegistros = new RegistrosShortcodeC();
-            $mostrarRegistros -> MostrarRegistroShortcodeC();
-        ?>
-    </div>
 <?php
+    }else{?>
+        <div class="WrapperPage">
+            <p>No puede ver los registros si no se encuetra logueado</p>
+        </div>
+<?php
+    }
 }
 
 function ReistrarShortCode(){
@@ -42,7 +49,7 @@ function ReistrarShortCode(){
     </div>
 <?php
     }else{ ?>
-        <div>
+        <div class="WrapperPage">
             <p>No puede registrar mientras no se encuentre logeado</p>
         </div>
     <?php
