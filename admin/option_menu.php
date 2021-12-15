@@ -8,8 +8,30 @@ include (WPC_RUTA. 'admin/modelos/categorias_M.php');
 function MenuInicio(){
 ?>
     <div>
-        <h2><?php _e('WP-Curd', 'wp-crud') ?></h2>
-        <p>Bienvenido al sistema de registro</p>
+        <h1><?php _e('WP-Curd', 'wp-crud') ?></h1>
+        <h2>Bienvenido al sistema de registro</h2>
+        <section class="Wrapper">
+            <article class="PrincipalInfo">
+                <span>Sistema de registro donde podra:</span>
+                <ul>
+                    <li>-> Registrar</li>
+                    <li>-> Ver Registros</li>
+                    <li>-> Editar los Regitros</li>
+                    <li>-> Eliminar los Registros</li>
+                </ul>
+                <span>Ademas podrá trabajar con categorias:</span>
+                <ul>
+                    <li>-> Crear Categorias</li>
+                    <li>-> Ver las Categorias</li>
+                    <li>-> Eliminar</li>
+                    <li>-> Asignar Categorias a los registros</li>
+                </ul>
+                <span>Sumado a esto podrá generar un reporte PDF con todos los registros realizados</span>
+            </article>
+            <figure class="AdminFormContentImg">
+                <img class="AdminImg" src="<?= WPC_RUTA_PUBLIC.'admin/img/inicio.svg'; ?>" alt="">
+            </figure>
+        </section>
     </div>
 <?php
 }
@@ -18,14 +40,14 @@ function SubMenuRegistro(){
     <div>
         <h2><?php _e('Formulario de Registros','formulario de registro') ?></h2>
         <div class="Wrapper">
-            <div>
+            <div class="Form">
                 <form class="WrapperForm" method="post">
                     <label>Nombre</label>
                     <input type="text" name="NombreR" required>
                     <label>Fecha</label>
                     <input type="date" name="FechaR" required>
                     <label>Categoria</label>
-                    <select name="CategoriasR" required>
+                    <select class="RegisterSelec" name="CategoriasR" required>
                         <?php
                             $categorias = new RegistrosC();
                             $categorias -> SelectCategoriasC();
@@ -38,9 +60,9 @@ function SubMenuRegistro(){
                     ?>
                 </form>
             </div>
-            <div>
-                <p> Aca va una imagen</p>
-            </div>
+            <figure class="AdminFormContentImg">
+                <img class="AdminImg" src="<?= WPC_RUTA_PUBLIC.'admin/img/adminform.svg'; ?>" alt="">
+            </figure>
         </div>
     </div>
 <?php
