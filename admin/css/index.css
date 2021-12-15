@@ -67,6 +67,7 @@ a{
         flex-direction: row;
         justify-content: center;
         gap: 6rem;
+        align-items: center;
     }
     .CategoryList{
         width: 50%;
