@@ -22,7 +22,7 @@ function PaginasCrud(){
 
 }
 
-function EliminarPaginas(){
+/*function EliminarPaginas(){
     $pagina = get_pages( array(
         'authors'=> 1,
         'post_type'=>'page',
@@ -40,4 +40,4 @@ function EliminarPaginas(){
             wp_delete_post( $paginas-> ID , true );
         }
     }
-}
+}*/

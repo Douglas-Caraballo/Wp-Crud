@@ -23,7 +23,7 @@ function db_WpCrud(){
     $wpdb -> query($categorias);
 }
 
-function EliminarBD(){
+/*function EliminarBD(){
     global $wpdb;
     $nombreTabla = $wpdb->prefix."registers";
     $nombreTablaSecond= $wpdb->prefix."categories_registers";
@@ -33,4 +33,4 @@ function EliminarBD(){
 
     $sqlCategoriesRegister = "DROP TABLE IF EXISTS $nombreTablaSecond";
     $wpdb -> query($sqlCategoriesRegister);
-}
+}*/
