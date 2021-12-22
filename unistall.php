@@ -9,17 +9,17 @@ global $wpdb;
 $nombreTabla = $wpdb->prefix."registers";
 $nombreTablaSecond= $wpdb->prefix."categories_registers";
 
-$sqlRegister="DROP TABLE IF EXISTS {$nombreTabla}";
-$wpdb -> query($sqlRegister);
+//$sqlRegister="DROP TABLE IF EXISTS {$nombreTabla}";
+$wpdb -> query("DROP TABLE IF EXISTS {$nombreTabla}");
 
-$sqlCategoriesRegister = "DROP TABLE IF EXISTS {$nombreTablaSecond}";
-$wpdb -> query($sqlCategoriesRegister);
+//$sqlCategoriesRegister = "DROP TABLE IF EXISTS {$nombreTablaSecond}";
+$wpdb -> query("DROP TABLE IF EXISTS {$nombreTablaSecond}");
 
 /**
  * Elimina las paginas creadas por el plugin
  */
 
-wp_trash_post( get_option('Registrar'));
-wp_trash_post( get_option('Todos los Registros'));
+wp_trash_post( get_option('registrar'));
+wp_trash_post( get_option('todos-los-registros'));
 
 wp_cache_flush();
