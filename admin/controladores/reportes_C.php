@@ -41,31 +41,33 @@ class ReportesC{
         $pdf-> Output();
         ob_end_flush();
     }
-    /*public function UsuariosReportesC(){
-        $datosC = array("usuario"=>$_POST["UsuarioRE"]);
-        $respuesta = ReportesM::UsuariosReportesM($datosC);
-        $pdf = new PDF();
-        $pdf -> AliasNbPages();
-        $pdf -> AddPage();
-        $pdf -> SetFont('Arial', '', 12);
+    public function UsuariosReportesC(){
+        if(isset($_POST["UsuarioRE"])){
+            $datosC = array("usuario"=>$_POST["UsuarioRE"]);
+            $respuesta = ReportesM::UsuariosReportesM($datosC);
+            $pdf = new PDF();
+            $pdf -> AliasNbPages();
+            $pdf -> AddPage();
+            $pdf -> SetFont('Arial', '', 12);
 
-        foreach($respuesta as $key => $row){
-            $pdf -> Cell(50,10,utf8_decode($row['nombre']),1,0,'C',0);
-            $pdf -> Cell(30,10,$row['fecha'],1,0,'C',0);
-            $pdf -> Cell(30,10, utf8_decode($row['nombre_c']),1,0,'C',0);
-            $pdf -> Cell(30,10,utf8_decode($row['user_nicename']),1,1,'C',0);
-        }
-        $pdf-> Output();
-        ob_end_flush();
-    }*/
+            foreach($respuesta as $key => $row){
+                $pdf -> Cell(50,10,utf8_decode($row['nombre']),1,0,'C',0);
+                $pdf -> Cell(30,10,$row['fecha'],1,0,'C',0);
+                $pdf -> Cell(30,10, utf8_decode($row['nombre_c']),1,0,'C',0);
+                $pdf -> Cell(30,10,utf8_decode($row['user_nicename']),1,1,'C',0);
+            }
+            $pdf-> Output();
+            ob_end_flush();
+            }
+    }
 }
-/*class ReportesUserC{
+class ReportesUserC{
     public function SelectUserC(){
-        $respuesta = ReportesUserM::SelectUserM();
-        foreach ($respuesta as $key => $value){
+        $respuesta= ReportesUserM::SelectUserM();
+        foreach($respuesta as $key => $value){
             echo '<option value="'.$value["ID"].'">'. $value["user_nicename"] .'</option>';
         }
     }
 
-}*/
+}
 ?>

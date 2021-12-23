@@ -9,7 +9,6 @@ function MenuWpCrud(){
     add_submenu_page('wp-crud', 'Todos los Registros', 'Todos los Registros','manage_options', 'registros','SubMenuTodos');
     add_submenu_page('wp-crud', 'Generar Reporte', 'Generar Reportes','manage_options', 'reportes','SubmenuReporte');
     add_submenu_page('reportes', 'Generar Reporte', 'Generar Reportes','manage_options', 'reportes_general','SubmenuReporteGeneral');
-    //add_submenu_page('reportes', 'Generar Reporte', 'Generar Reportes','manage_options', 'reportes_usuarios','SubmenuReporteUsuario');
 }
 
 add_action('admin_menu', 'MenuWpCrud');

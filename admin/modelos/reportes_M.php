@@ -14,7 +14,7 @@ class ReportesM{
         return $allRegister;
     }
 
-    /*static public function UsuariosReportesM($datosC){
+    static public function UsuariosReportesM($datosC){
         global $wpdb;
         $usuario = $datosC["usuario"];
         $nombreTabla = $wpdb->prefix."registers";
@@ -27,9 +27,9 @@ class ReportesM{
         );
         return $allRegister;
 
-    }*/
+    }
 }
-/*class ReportesUserM{
+class ReportesUserM{
     static public function SelectUserM(){
         global $wpdb;
         $nombreTabla = $wpdb->prefix."users";
@@ -38,4 +38,4 @@ class ReportesM{
         );
         return $allRegister;
     }
-}*/
+}
