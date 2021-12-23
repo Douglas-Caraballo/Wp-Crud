@@ -19,7 +19,22 @@ $wpdb -> query($sqlCategoriesRegister);
  * Elimina las paginas creadas por el plugin
  */
 
-wp_trash_post( get_option('registrar'));
-wp_trash_post( get_option('todos-los-registros'));
+$pagina = get_pages( array(
+    'authors'=> 1,
+    'post_type'=>'page',
+    'post_status' => 'publish',
+    'sort_column' => 'post_title'
+    )
+);
+
+foreach ($pagina as $paginas){
+    $nombre= $paginas -> post_title;
+    if($nombre=='Todos los Registros'){
+        wp_delete_post( $paginas-> ID , true );
+    }
+    if ($nombre=='Registrar'){
+        wp_delete_post( $paginas-> ID , true );
+    }
+}
 
 wp_cache_flush();
