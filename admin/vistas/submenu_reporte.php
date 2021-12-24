@@ -12,13 +12,13 @@ function SubmenuReporte(){
                 <section class="Wrapper">
                     <h3>Reporte por usuario</h3>
                     <form method="post">
-                        <select name="UsuarioRE" required>
+                        <select class="SelectReporteUsuario" name="UsuarioRE" required>
                             <?php
                                 $usuarios = new ReportesUserC;
                                 $usuarios -> SelectUserC();
                             ?>
                         </select>
-                        <input type="submit" value="Generar">
+                        <input class="Wp-CrudSubmit ReporteSubmit" type="submit" value="Generar">
                         <?php
                             $usuarioReporte = new ReportesC();
                             $usuarioReporte->UsuariosReportesC();
