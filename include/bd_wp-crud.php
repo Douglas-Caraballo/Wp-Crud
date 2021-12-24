@@ -22,15 +22,3 @@ function db_WpCrud(){
         PRIMARY KEY (ID))$charset_collate;";
     $wpdb -> query($categorias);
 }
-
-/*function EliminarBD(){
-    global $wpdb;
-    $nombreTabla = $wpdb->prefix."registers";
-    $nombreTablaSecond= $wpdb->prefix."categories_registers";
-
-    $sqlRegister="DROP TABLE IF EXISTS $nombreTabla";
-    $wpdb -> query($sqlRegister);
-
-    $sqlCategoriesRegister = "DROP TABLE IF EXISTS $nombreTablaSecond";
-    $wpdb -> query($sqlCategoriesRegister);
-}*/

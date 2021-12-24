@@ -28,5 +28,3 @@ require(WPC_RUTA. 'include/shortcodes.php');
 
 
 //Desactivación del plugin
-//register_deactivation_hook( __FILE__, 'EliminarPaginas' );
-//register_deactivation_hook( __FILE__, 'EliminarBD');
