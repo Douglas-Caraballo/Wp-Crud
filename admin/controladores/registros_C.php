@@ -40,6 +40,11 @@ class RegistrosC{
                     <input type="text" value="'.$value["nombre"].'"name="nombreE">
                     <label>Fecha</label>
                     <input type="date" name="fechaE">
+                    <label>Categorias</label>
+                    <select name="categoriaE">';
+                    $this->SelectCategoriasC();
+            echo    '
+                    </select>
                     <input class="submint" type="submit" value="Actualizar">
                     ';
         }
@@ -47,7 +52,7 @@ class RegistrosC{
 
     public function ActualizarRegistroC(){
         if (isset($_POST["nombreE"])){
-            $datosC= array("id"=>$_POST["idE"], "nombre"=>$_POST["nombreE"], "fecha"=>$_POST["fechaE"]);
+            $datosC= array("id"=>$_POST["idE"], "nombre"=>$_POST["nombreE"], "fecha"=>$_POST["fechaE"], "categoria"=>$_POST["categoriaE"]);
 
             $respuesta = RegistrosM::ActualizarRegistroM($datosC);
             if($respuesta=="Bien"){?>

@@ -43,7 +43,8 @@ class RegistrosM{
         $nombreTabla = $wpdb->prefix."registers";
         $wpdb -> update($nombreTabla,array(
                 'nombre'=>$datosC['nombre'],
-                'fecha'=>$datosC['fecha']
+                'fecha'=>$datosC['fecha'],
+                'id_categoria_registro'=>$datosC['categoria']
                 ),
                 array('ID'=>$datosC['id'])
         );
