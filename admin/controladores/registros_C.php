@@ -39,13 +39,13 @@ class RegistrosC{
                     <label>Nombre</label>
                     <input type="text" value="'.$value["nombre"].'"name="nombreE">
                     <label>Fecha</label>
-                    <input type="date" name="fechaE">
+                    <input type="date" value="'.$value["fecha"].'" name="fechaE">
                     <label>Categorias</label>
                     <select name="categoriaE">';
                     $this->SelectCategoriasC();
             echo    '
                     </select>
-                    <input class="submint" type="submit" value="Actualizar">
+                    <input class="Wp-CrudSubmit" type="submit" value="Actualizar">
                     ';
         }
     }

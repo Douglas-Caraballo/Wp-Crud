@@ -33,7 +33,7 @@ class RegistrosM{
     static public function EditarRegistroM($datosC){
         global $wpdb;
         $nombreTabla = $wpdb->prefix."registers";
-        $registro = $wpdb -> get_results("SELECT ID, nombre FROM $nombreTabla WHERE 
+        $registro = $wpdb -> get_results("SELECT ID, nombre,fecha FROM $nombreTabla WHERE 
             ID=$datosC",ARRAY_A);
         return $registro;
     }
