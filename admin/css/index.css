@@ -31,6 +31,8 @@ a{
     padding: 0.5rem;
     gap: 1rem;
     border-bottom: 1px solid black;
+    align-items: center;
+    width: 100%;
 }
 .PrincipalInfo{
     font-size: 1rem;
@@ -43,7 +45,13 @@ a{
     display: flex;
     justify-content: center;
     width: 20%;
-    font-size: 1rem;
+    font-size: 0.9rem;
+}
+.TableRegisterHead{
+    background-color: #262626;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 0.5rem;
 }
 .Button{
     padding: 1rem;
@@ -90,5 +98,8 @@ a{
     }
     .ReporteSubmit:hover{
         color: #135e96;
+    }
+    .TableItemRegister{
+        font-size: 1rem;
     }
 }
