@@ -5,7 +5,7 @@ Plugin URI:
 Description: Plugin para crear un crud en wordpress y generar pdf
 Version: 1.5
 Author: Douglas Caraballo
-Author URI:
+Author URI: https://github.com/Douglas-Caraballo
 License:
 */
 
